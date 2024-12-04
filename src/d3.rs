@@ -45,7 +45,11 @@ pub fn run() -> Result<(), Box<dyn Error>> {
 
     for val in values {
         match val {
-            Value::Mul((n1, n2)) => if enabled { ans += n1 * n2; },
+            Value::Mul((n1, n2)) => {
+                if enabled {
+                    ans += n1 * n2;
+                }
+            }
             Value::Do => enabled = true,
             Value::Dont => enabled = false,
         }

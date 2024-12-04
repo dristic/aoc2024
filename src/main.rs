@@ -5,6 +5,9 @@ use clap::{arg, command};
 mod d1;
 mod d2;
 mod d3;
+mod d4;
+
+mod map;
 
 fn main() {
     run().unwrap();
@@ -18,14 +21,14 @@ fn run() -> Result<(), Box<dyn Error>> {
         ))
         .get_matches();
 
-    let days = [d1::run, d2::run, d3::run];
+    let days = [d1::run, d2::run, d3::run, d4::run];
 
     // You can check the value provided by positional arguments, or option arguments
     if let Some(day) = matches.get_one::<String>("day") {
         println!("Running day {day}");
         let num = day.parse::<usize>()?;
 
-        days[num-1]()?;
+        days[num - 1]()?;
     }
 
     Ok(())
