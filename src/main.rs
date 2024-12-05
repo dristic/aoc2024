@@ -6,6 +6,7 @@ mod d1;
 mod d2;
 mod d3;
 mod d4;
+mod d5;
 
 mod map;
 
@@ -21,7 +22,7 @@ fn run() -> Result<(), Box<dyn Error>> {
         ))
         .get_matches();
 
-    let days = [d1::run, d2::run, d3::run, d4::run];
+    let days = [d1::run, d2::run, d3::run, d4::run, d5::run];
 
     // You can check the value provided by positional arguments, or option arguments
     if let Some(day) = matches.get_one::<String>("day") {
